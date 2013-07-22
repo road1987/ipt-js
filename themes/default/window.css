@@ -1,0 +1,123 @@
+	.ipt-window , .ipt-msgbox{
+		font-size: 13px;
+		border:1px solid #A2B1C5;
+		position:relative;
+		display : inline-block;
+		zoom : 1;
+		*display : block;
+		background:  #CED9E7;
+		width : 100%;
+		border-radius : 5px 5px 5px 5px;
+		box-shadow : 0 1px 0 0 #ECF2FB inset, 0 -1px 0 0 #ECF2FB inset, -1px 0 0 0 #ECF2FB inset, 1px 0 0 0 #ECF2FB inset;
+		padding: 4px ;
+	}
+	
+	.ipt-window-header , .ipt-msgbox-header{
+		color : #04468C;
+		display:block;
+		height: 24px;
+		line-height:24px;
+		position: relative;
+		font-weight:bold;
+		cursor : move;
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		-khtml-user-select : none;
+		-ms-user-select: none; 
+	}
+	
+	.ipt-window-body{
+		background: white;
+		border : 1px solid #99BCE8;
+	}
+	
+	.ipt-window-footer , .ipt-msgbox-footer{
+	
+	}
+	
+	.ipt-window-titleContainer ,  .ipt-msgbox-titleContainer{
+		padding-left : 4px;
+		line-height: 20px;
+		background: #F2F2F2;
+	}
+
+	.ipt-window-contentContainer , .ipt-msgbox-contentContainer{
+		position: relative;
+		overflow: hidden;
+		height : auto;
+		width : auto;
+		padding : 10px 10px 20px 10px;
+	}
+
+	.ipt-window-toolbar-topwrap , .ipt-msgbox-toolbar-topwrap{
+		1padding : 4px;
+		background:  #CED9E7;
+		1border-bottom : 1px solid #E6E6E6;		
+	}
+	
+	.ipt-window-toolbar-bottomwrap , .ipt-msgbox-toolbar-bottomwrap{
+		1padding : 4px;
+		background:  #CED9E7;
+		1border-top: 1px solid #E6E6E6;
+	}
+	
+	.ipt-window-tool , .ipt-msgbox-tool{
+		height: 20px;
+		line-height:20px;
+		position: absolute;
+		top : 0px;
+		right : 2px;
+	}
+	
+	.ipt-window-tool div , .ipt-msgbox-tool div{
+		width : 15px;
+		height: 15px;
+		margin : 4px 1px;
+		display:inline-block;
+		zoom : 1 ; /*fix IE layout bug*/
+		*display : inline;
+		cursor : pointer;
+		background-image : url("images/tool-sprites.gif");
+	}
+	
+	.ipt-window-tool-collapse , .ipt-msgbox-tool-collapse{
+		background-position : 0px -210px;
+	 }
+	 
+	 .ipt-window-tool-expand , .ipt-msgbox-tool-expand {
+	 	background-position : 0px -195px;
+	 }
+	 
+	 .ipt-window-tool-min , .ipt-msgbox-tool-min{
+		background-position : 0px -15px;
+	 }
+	 
+	 .ipt-window-tool-max , .ipt-msgbox-tool-min{
+		background-position : 0px -30px;
+	 }
+	 
+	 .ipt-window-tool-close , .ipt-msgbox-tool-close{
+		background-position : 0px 0px;
+	 }
+	 
+	.ipt-window-tool-collapse-over , .ipt-msgbox-tool-collapse-over{
+		background-position : 15px -210px;
+	 }
+
+	 .ipt-window-tool-expand-over , .ipt-msgbox-tool-expand-over {
+	 	background-position : 15px -195px;
+	 }
+	 
+	 .ipt-window-tool-min-over , .ipt-msgbox-tool-min-over{
+		background-position : 15px -15px;
+	 }
+	 
+	 .ipt-window-tool-max-over , .ipt-msgbox-tool-max-over{
+		background-position : 15px -30px;
+	 }
+	 
+	 .ipt-window-tool-close-over , .ipt-msgbox-tool-close-over{
+		background : 15px 0px;
+	 }
+	
+	

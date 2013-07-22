@@ -1,0 +1,119 @@
+<html>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+	<!-- 导入皮肤 -->
+    <link rel="stylesheet" type="text/css" href="../../themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+   <!-- 导入包 -->
+    <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+   <script type="text/javascript" src="../../dest/ipt.js"></script>
+ <style>
+	* {
+		margin:0px;padding:0px;	
+	}
+
+	.item {
+		height : 34px;
+		font-weight:bold;
+	}
+
+	.icon {
+		width : 32px;
+		height : 32px;
+		background : url("images/ball.png");
+	}
+ </style>
+ </HEAD>
+
+ <BODY>
+	<div id="toolbar" style="display:inline-block; *display:inline; width:300px;height:auto;padding:5px 2px; line-height:20px;border:1px solid gray; background:#DDD;zoom:1;"></div>
+	<div id="toolbar1" style="display:inline-block; *display:inline; width:300px;height:auto;padding:5px 2px; line-height:20px;border:1px solid gray; background:#DDD;zoom:1; display:none;"></div>
+ 	<div id="contextMenu" style="width : 400px ; height: 400px; background:gray; font-size:40px; color:white;">context menu</div>
+ <script>
+
+// menu test
+	var menu1 = new IPT.menu.Menu({
+			items : [
+				{	text : "新 建" , 
+				 	menu : {
+						items : [
+						    {text : "文          件"},
+						    {text : "文本文档" , 
+							    menu : {
+									items : [
+								    	{text : "html 文件"},
+								    	{text : "jsp  文件"},
+								    	{text : "java 文件"},
+								    	{text : "php  文件" , 
+									    	menu : {			
+												items : [{text : "model "},
+														 {text : "template " ,
+													 	  listeners : {
+																	'click' : function(){
+																		alert("create a " + this.getText());
+																	}
+														  }
+														  }]
+												}
+										}
+									]
+								}
+							},
+						    {text : "word文档"}
+						]
+					}
+				},
+				{text : "拷 贝"},
+				{text : "剪 切", iconCls : "icon-cut"},
+				{ text : "粘 贴", iconCls : "icon-back",
+				  menu : { 
+					  items : [ "test","test" ]
+				  }
+				}
+			]
+		});
+
+
+
+
+	
+	var button = new IPT.button.Button({
+			text:"showMenu" , 
+			menu : menu1,
+			renderTo : document.body,
+			listeners : {
+				'click' : function(){
+					this.showMenu();
+				 }
+			},
+			top : 600,
+			left : 900
+		});
+
+	var button2 = new IPT.button.Button({
+		text:"showMenu" , 
+		menu : menu1,
+		renderTo : document.body,
+		listeners : {
+			'mouseover' : function(){
+				this.showMenu();
+			 }
+		},
+		top : 100,
+		left : 1000
+	});
+
+		$("#contextMenu").bind("contextmenu" , function(e){
+			IPT.Event.preventDefault(e);
+			IPT.Event.cancelBubble(e);
+			menu1.showAt(e.pageX, e.pageY);
+			menu1.show();
+		});
+ </script>
+ </BODY>
+</HTML>

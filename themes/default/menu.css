@@ -1,0 +1,6 @@
+	.ipt-menu { 
+		background : url("images/menu.gif") repeat-y #DDDDDD;
+		border : 1px solid #ECE9D8;
+		position: absolute;
+		overflow: hidden;
+	}

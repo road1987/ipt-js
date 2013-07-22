@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+ <HEAD>
+  <TITLE> IPT.Class </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+	<!-- 导入包 -->
+   <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+   <script type="text/javascript" src="../../dest/ipt-min.js"></script>
+
+   <style>
+   	* {
+   		margin:0px;
+   		padding : 0px;
+   	}
+   	
+   	ul {
+   		list-style : none;
+   		margin : 0px;
+   		padding : 0px;
+   	}
+   </style>
+ </HEAD>
+
+ <BODY >
+  <div id="test">
+ 	<ul>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	</ul>
+ </div>
+ <div class="window1"></div>
+ <script>
+ 
+	var window = new IPT.window.Window({
+		renderTo : document.body,
+		title : "window",
+		collapsible : true,
+		minimizable : true,
+		width : "900px",
+		height : '200px',
+		html : $("#test")
+	});
+ </script>
+ </body>
+ 
+</HTML>

@@ -1,0 +1,57 @@
+	.ipt-btn {
+		position : relative;
+		cursor : pointer;
+		margin : 0px 2px ;
+		vertical-align: middle; 
+		display : inline-block;
+		*display : inline;
+		zoom : 1 ; /*fix IE layout bug*/
+		overflow : hidden;
+
+		background-image: -moz-linear-gradient(center top , #FFFFFF, #F9F9F9 48%, #E2E2E2 52%, #E7E7E7);
+		border: 1px solid #7F9DB9;
+		border-radius : 3px;
+		background-color:#F8F8F6;
+	}
+
+	.ipt-btn button {
+		border: 0px none;
+		background: none;
+		outline : 0;
+		cursor: pointer;
+		padding : 2px ;
+		*padding: 1px ;
+		margin : 0px;
+		width : auto;
+	}
+
+	.ipt-btn button::-moz-focus-inner{border-color:transparent !important;} /*fix inner border */
+
+	.ipt-btn .ipt-btn-text {
+		font-size : 11px;
+		font-family : tahoma,arial,verdana,sans-serif;
+		text-align: center;
+		white-space : no-wrap;
+		display : block;
+	}
+
+	 .ipt-btn .ipt-btn-icon {
+		background-repeat : no-repeat;
+		background-position : right center;
+		position: absolute;
+		top : 0px;
+		left : 0px;
+		bottom : 0px;
+		margin: 4px;
+		padding : 0px;
+		display: block;
+	}
+
+	/**state**/
+	.ipt-btn-hover { 
+		background: #B6CBE4;
+	}
+	
+	.ipt-btn-pressed {
+		background: #95C3F5;
+	}

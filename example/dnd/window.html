@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+ <HEAD>
+  <TITLE> IPT.Class </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+	<!-- 导入包 -->
+   <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+   <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+   <style>
+   	* {
+   		margin:0px;
+   		padding : 0px;
+   	}
+   	
+   	ul {
+   		list-style : none;
+   		margin : 0px;
+   		padding : 0px;
+   	}
+   </style>
+ </HEAD>
+
+ <BODY >
+  <div id="test">
+ 	<ul>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	</ul>
+ </div>
+ <div id="windowX" style="width : 400px; height : 400px; background:#EE0"><div id="xx" style="width:80px;height:80px;background:white;"></div></div>
+  <div id="windowY" style="width : 400px; height : 400px; background:#E60"></div>
+ <script>
+ 
+	var window1 = new IPT.window.Window({
+		renderTo : document.body,
+		title : "window",
+		collapsible : true,
+		width : "900px",
+		height : '200px',
+		html : $("#test")
+	});
+	var winDsource = new IPT.dnd.DragSource(window1.getElement() , window1.getHeaderWrap());
+	
+	var IptEvent = IPT.events.EventObject;
+	var dsource = new IPT.dnd.DragSource($("#xx").get(0));
+	dsource.addListener(IptEvent.DRAG_START, function(){
+		console.log("dragStart");
+	});
+	dsource.addListener(IptEvent.DRAG, function(){
+		console.log("drag");
+	});
+	dsource.addListener(IptEvent.DRAG_END, function(){
+		console.log("dragend");
+	});
+	
+	var dTarget0 = new IPT.dnd.DropTarget($("#windowX").get(0));
+	var dTarget = new IPT.dnd.DropTarget($("#windowY").get(0));
+	dTarget.addListener(IptEvent.DRAG_ENTER , function(e){
+		console.log("enter windowY");
+	});
+	dTarget.addListener(IptEvent.DRAG_OVER , function(e){
+		$(this.getTarget()).css("background" , "black");
+	});
+	dTarget.addListener(IptEvent.DRAG_LEAVE , function(e){
+		$(this.getTarget()).css("background" , "#E60");
+	});	
+	
+	dTarget.addListener(IptEvent.DROP , function(e,source){
+		$(this.getTarget()).append(source);
+	});
+ </script>
+ </body>
+ 
+</HTML>

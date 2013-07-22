@@ -1,0 +1,124 @@
+	.ipt-panel {
+		font-size: 12px;
+		font-weight : bold;
+		border:1px solid #99BCE8;
+		position:relative;
+		display : inline-block;
+		zoom : 1;
+		*display : block;
+		background: #F9F9F9;
+		width : 100%;
+		1border-radius : 5px 5px 5px 5px;
+	}
+	
+	.ipt-panel-header{
+		display:block;
+		color : #04408C;
+		border-bottom: 1px solid #99BCE8;
+		line-height : 15px;
+		position: relative;
+		font-weight:bold;
+		padding : 5px;
+		background: #ABC7EC;
+		background-image: -moz-linear-gradient(center top , #DAE7F6,  #ABC7EC );
+		background-image: -webkit-gradient(linear, 50% 0%, 50%  100%, from(#DAE7F6), to(#ABC7EC));
+		background-image: -webkit-linear-gradient( center top, #DAE7F6, #ABC7EC);
+		background-image: -o-linear-gradient(top center , #DAE7F6, #ABC7EC);
+		background-image: linear-gradient(top center , #DAE7F6, #ABC7EC);
+		
+	}
+	
+	.ipt-panel-body{
+		background:white;
+	}
+	
+	.ipt-panel-footer{
+	
+	}
+	
+	.ipt-panel-titleContainer{
+		padding-left : 4px;
+		line-height: 20px;
+		background: #F2F2F2;
+	}
+
+	.ipt-panel-contentContainer{
+		position: relative;
+		overflow: hidden;
+		padding : 5px;
+		height : auto;
+		width : auto;
+	}
+
+	.ipt-panel-toolbar-topwrap {
+		1padding : 4px;
+		background : #F2F2F2;
+		border-bottom : 1px solid #E6E6E6;		
+	}
+	
+	.ipt-panel-toolbar-bottomwrap{
+		1padding : 4px;
+		background : #F2F2F2;
+		border-top: 1px solid #E6E6E6;
+	}
+	
+	.ipt-panel-tool{
+		height: 20px;
+		line-height:20px;
+		position: absolute;
+		top : 0px;
+		right : 2px;
+	}
+	
+	.ipt-panel-tool div{
+		width : 15px;
+		height: 15px;
+		margin : 4px 1px;
+		display:inline-block;
+		zoom : 1 ; /*fix IE layout bug*/
+		*display : inline;
+		cursor : pointer;
+		background-image : url("images/tool-sprites.gif");
+	}
+	
+	.ipt-panel-tool-collapse {
+		background-position : 0px -210px;
+	 }
+	 
+	 .ipt-panel-tool-expand {
+	 	background-position : 0px -195px;
+	 }
+	 
+	 .ipt-panel-tool-min{
+		background-position : 0px -15px;
+	 }
+	 
+	 .ipt-panel-tool-max{
+		background-position : 0px -30px;
+	 }
+	 
+	 .ipt-panel-tool-close{
+		background-position : 0px 0px;
+	 }
+	 
+	.ipt-panel-tool-collapse-over{
+		background-position : 15px -210px;
+	 }
+
+	 .ipt-panel-tool-expand-over {
+	 	background-position : 15px -195px;
+	 }
+	 
+	 .ipt-panel-tool-min-over{
+		background-position : 15px -15px;
+	 }
+	 
+	 .ipt-panel-tool-max-over{
+		background-position : 15px -30px;
+	 }
+	 
+	 .ipt-panel-tool-close-over{
+		background : 15px 0px;
+	 }
+	
+	

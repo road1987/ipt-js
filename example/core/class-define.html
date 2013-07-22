@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <HEAD>
+  <TITLE> IPT.Class </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- 导入包 -->
+   <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+   <script type="text/javascript" src="../../core.js"></script>
+ </HEAD>
+
+ <BODY >
+ <script>
+	IPT.Class.define("xx.Person",{
+			constructor : function(id,name,sex){
+				this.id = id;
+				this.name = name ;
+				this.sex = sex ;
+			},
+			methods : {
+				getId : function(){
+					return this.id;			
+				},
+				getName : function(){
+					return this.name;
+				},
+				setName : function(name){
+					this.name = name;
+				}
+			}
+		}
+	);
+
+	IPT.Class.define("Employee" , {
+			extend : "xx.Person" ,
+			constructor : function(id,name,sex,dept){
+				Employee.callParent(this,id,name,sex);
+				this.dept = dept; 
+			},
+			
+			methods : {
+				setDept : function(dept){
+					this.dept = dept;
+				},
+				
+				getDept : function(){
+					return this.dept;
+				}
+			}
+		}
+	);
+
+	IPT.Class.define("Manager" , {
+		extend : "Employee" ,
+		constructor : function(id,name,sex,dept , stock){
+			Manager.callParent(this,id,name,sex,dept);
+			this.dept = dept; 
+			this.stock = stock;
+		},
+		
+		methods : {
+			setStock : function(stock){
+				this.stock = stock;
+			},
+			
+			getStock : function(){
+				return this.stock;
+			}
+		}
+	}
+);
+	var xiaoming = new xx.Person("0001"  , "xiao ming" , "male");
+	var xiaowang = new Manager("0002"  , "xiao wang" , "female","IT DEPT","20%");
+	
+	console.log(xiaoming.getName());
+	console.log(xiaowang.getName());
+	console.log(xiaowang.getDept())
+	console.log(xiaowang.getStock())	
+	alert($.type(""))
+ </script>
+ </BODY>
+</HTML>

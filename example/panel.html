@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+ <HEAD>
+  <TITLE> IPT.Class </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link rel="stylesheet" type="text/css" href="../themes/default/ipt-min.css" />
+	<!-- 导入包 -->
+   <script type="text/javascript" src="jquery-1.8.2.js"></script>	
+   <script type="text/javascript" src="../dest/ipt-min.js"></script>
+
+   <style>
+   	* {
+   		margin:0px;
+   		padding : 0px;
+   	}
+   	
+   	ul {
+   		list-style : none;
+   		margin : 0px;
+   		padding : 0px;
+   	}
+   	
+   </style>
+ </HEAD>
+
+ <BODY >
+  <div id="test">
+ 	<ul>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	<li>this is a test!</li>
+ 	</ul>
+ </div>
+ 
+ <div class="window1"></div>
+ <script>
+	var panel = new IPT.Panel({
+		renderTo : document.body,
+		collapsible : true,
+		title : "panel",
+		width : "400px",
+		height : '200px',
+		html : "this is a panel!"
+	});
+	var panel1 = new IPT.Panel({
+		renderTo : document.body,
+		title : "panel",
+		width : "400px",
+		height : '200px',
+		closable : true,
+		html : "pane1"
+	});
+	var panel = new IPT.Panel({
+		renderTo : document.body,
+		title : "panel",
+		width : "400px",
+		height : '200px',
+		html : $("#test"),
+		tToolbar : new IPT.Toolbar({
+			items : [
+				{"xtype" : "button" , "text" : "Tool" , "width":"40px" , "height":"40px"}
+			]
+		})
+	});
+	panel.addListener("collapsed" , function(){alert("collapsed")});
+	panel.addListener("expanded" , function(){alert("expanded")});
+	
+ </script>
+ </body>
+ 
+</HTML>

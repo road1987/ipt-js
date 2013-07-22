@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <HEAD>
+  <TITLE> New Document </TITLE>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <!-- 导入皮肤 -->
+   <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+
+	<!-- 导入包 -->
+   <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+   <script type="text/javascript" src="../../dest/ipt-min.js"></script>
+ <style>
+	* {
+		padding:0px;
+		margin:0px;
+	}
+
+	.ipt-btn .add{
+		width:32px;
+		height:32px;
+		background-image: url("images/calc.png") ;
+		vertical-align:middle;
+	}
+	
+	
+ </style>
+ </HEAD>
+
+ <BODY>
+	<div id="toolbar" style="display:block; width:400px;height:auto;padding:5px 2px; line-height:20px;border:1px solid gray; background:#DDD;"></div>
+ 	<button>simple button</button>
+	 <script>
+		var button = new IPT.button.Button({
+				"top" : "100px",
+				"left" : "100px",
+				"width" : "50px",
+				"height" : "50px",
+				"text" : "button1",
+				"renderTo" : "#toolbar",
+				"listener" : {
+					click : function(){
+						alert(1);
+					}
+				}
+			});
+
+		var button_ = new IPT.button.Button({
+			"top" : "100px",
+			"left" : "150px",
+			"width" : "50px",
+			"height" : "50px",
+			"text" : "2",
+			"renderTo" : "#toolbar"
+		});
+		
+		var button2 = new IPT.button.Button({
+			text : "下一步",
+			iconCls : "add",
+			renderTo : "#toolbar"
+		});
+		var button3 = new IPT.button.Button({
+			text : "确定",
+			renderTo : "#toolbar"
+		});
+		
+		var button4 = new IPT.button.Button({
+			text : "取消",
+			renderTo : "#toolbar"
+		});
+		var button5 = new IPT.button.Button({
+			text : 'disable Button1',
+			renderTo : "#toolbar",
+			listeners : {
+				click : function(){
+					button.disable();
+				}
+			}
+		});
+
+		button5.render(document.body);
+		button3.setWidth("100px");
+		button4.setIconClass('add');
+		button2.addListener('click' , function(){
+			alert(this.getId());
+		})
+	
+		button5.setPosition("600" , "100");
+
+		var button01 = new IPT.button.Button({
+			"width" : "22px",
+			"height" : "22px",
+			text : "<<",
+			renderTo : "#toolbar"
+		});
+		var button02 = new IPT.button.Button({
+			"width" : "22px",
+			"height" : "22px",
+			text : ">",
+			renderTo : "#toolbar"
+		});
+		var button03 = new IPT.button.Button({
+			"width" : "22px",
+			"height" : "22px",
+			text : ">",
+			renderTo : "#toolbar"
+		});		
+		var button04 = new IPT.button.Button({
+			"width" : "22px",
+			"height" : "22px",
+			disabled : true,
+			text : ">>",
+			renderTo : "#toolbar"
+		});
+
+		var button06 = IPT.widget.create({
+				xtype : "button",
+				"id" : "xxx",
+				"height" : "80px",
+				text : "IPT.widget.create",
+				renderTo : "#toolbar"				
+			});
+
+		IPT.widget.get("xxx").addListener("click",function(){
+			alert("click");
+		});
+	 </script>
+    
+ </BODY>
+</HTML>

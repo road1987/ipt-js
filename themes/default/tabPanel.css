@@ -1,0 +1,121 @@
+	.ipt-tabs { 
+		overflow: hidden;
+		border : 1px solid #99BCE8;
+	}
+	
+	.ipt-tabs-header {
+		width : 100%;
+		height : 32px;
+		border-bottom : 1px solid #99BCE8;
+		background:#CED9E7;
+		position:relative;
+	}
+
+	.ipt-tabs-header ul {
+			list-style : none;
+			margin : 0px;
+			padding : 0px;	
+	}
+		
+	.ipt-tabs-header li {
+			float:left;	
+	}
+			
+	.ipt-tabs-header a{
+		width : 100px;
+		height : 29px;
+		line-height :29px;
+		text-align : center;
+		border: 1px solid  #8db2e3;
+		border-bottom : none;
+		border-top-left-radius : 5px;
+		border-top-right-radius : 5px;
+		
+		cursor : pointer;
+		background : #e0ecff;
+		font-weight : bold;
+		font-size : 12px;
+		color : black;
+		margin : 2px;
+		
+		display : block;
+		text-decoration : none;
+		outline:none; 
+	}
+	
+	.ipt-tabs-header a:hover{
+		background: url("images/tabs_actived.png") repeat-x;
+	}
+	
+	.ipt-tabs-header a:focus{
+		background: url("images/tabs_actived.png") repeat-x;
+	}
+		
+	.ipt-tabs-header a.ipt-tabs-actived{
+		top : 1px;
+		position : relative ; 
+		height : 29px;
+		background: url("images/tabs_actived.png") repeat-x;
+	}
+			
+	.ipt-tabs-scroll-left , .ipt-tabs-scroll-right{
+		cursor : pointer;
+		width : 18px;
+		height : 24px;
+		position:absolute;
+		display : none;
+		z-index : 1;
+	}
+	
+	.ipt-tabs-scroll-left {
+		top : 0px;
+		left : 0px;
+		background: url("images/scroll-left.gif") -18px 0px no-repeat;
+	}
+	
+	.ipt-tabs-scroll-right {
+		top : 0px ;
+		right : 0px ;
+		background: url("images/scroll-right.gif") 0px 0px  no-repeat;
+	}
+	
+	.ipt-tabs-scroll-hover {
+		background-position: -18px 0px;	
+	}
+	
+	.ipt-tabs-titles-outer {
+		margin:0px 6px;
+		1overflow : hidden;
+		position: relative;
+		height : 100%;
+	}
+	
+	.ipt-tabs-titles-inner{
+		margin : 0px; 
+		padding : 0px;
+		list-style-type : none;
+		position: absolute;
+		width : 5000px;
+	}
+	
+	.ipt-tabs-body {
+		height : 200px;
+	}
+	
+	.ipt-tabs-contentContainer {
+		height : 100%;	
+	}
+	
+	.ipt-tabs-body .ipt-panel{
+		border : none;
+	}
+	
+	.ipt-tabs-actived-item {
+		background : #F2F2F2;
+	}
+	
+	.ipt-tabs-actived-item button{
+		font-weight : bold;
+	}
+	
+	

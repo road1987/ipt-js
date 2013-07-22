@@ -1,0 +1,64 @@
+	.ipt-menuItem { 
+		vertical-align: middle;
+		cursor: pointer;
+		display: block;      
+		width : 100%;
+		font-size:11px;
+		padding: 0px;
+		border: 0px;
+	}
+	
+	.ipt-menuItem a {
+		position:relative;
+		border: 0px none;
+		background: none;
+		outline : 0;
+		cursor: pointer;
+		zoom : 1;
+		padding-left: 4px;
+		text-decoration : none;
+		color: black;
+		height: 2em;
+		line-height: 2em;
+		display: block;
+	}
+
+	.ipt-menuItem .ipt-menuItem-text {
+		font-size : 12px;
+		font-family : tahoma,arial,verdana,sans-serif;
+		text-align: center;
+		white-space : nowrap;
+		width : auto;
+		margin-left : 28px;
+	}
+
+	.ipt-menuItem .ipt-menuItem-icon {
+		border:0px;
+		background-repeat : no-repeat;
+		background-position : right center;
+		top : 0px;
+		left : 0px;
+		bottom : 0px;
+		padding : 0px;
+		margin: 4px;
+		position: absolute;
+		display : block;
+		vertical-align: middle;
+		width : 16px;
+		height : 16px;
+	}
+
+
+	.ipt-menuItem-hover { 
+		background: #B6CBE4;
+		border: 0px solid #D1D1D1;
+		1border-radius: 3px;
+	}
+	
+	.ipt-menuItem-actived {
+		background: #B6CBE4;		
+	}
+	
+	.ipt-menuItem-pressed {
+		background: #95C3F5;
+	}

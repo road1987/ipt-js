@@ -1,0 +1,49 @@
+	.fmes-layout-borderlayout{
+		display: block-inline;
+		width : 100%;
+		height : 100%;
+		position:relative;
+	}
+	
+	.fmes-borderlayout-region{
+		position : relative;
+	}
+	
+	.fmes-borderlayout-north , .fmes-borderlayout-south , .fmes-borderlayout-west , .fmes-borderlayout-east , .fmes-borderlayout-center{
+		background: black;
+		color: white;
+		position:absolute;
+		overflow: hidden;
+	}
+
+	.fmes-borderlayout-splitBar {
+		background:red;
+		position: absolute;
+		line-height:10px;
+		font-size:0px;
+	}
+
+	.fmes-borderlayout-north-splitBar , .fmes-borderlayout-south-splitBar{
+		cursor : n-resize; 
+	}
+
+	.fmes-borderlayout-west-splitBar , .fmes-borderlayout-east-splitBar{
+		cursor : w-resize; 
+	}
+	
+	.fmes-borderlayout-north {
+		1height: 100px;
+	}
+	
+	.fmes-borderlayout-south {
+		1height: 40px;
+	}
+	
+	.fmes-borderlayout-west {
+		1width: 200px;
+	}
+	
+	.fmes-borderlayout-east {
+		1width: 200px;
+	}
+	

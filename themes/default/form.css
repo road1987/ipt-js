@@ -1,0 +1,96 @@
+	.fmes-cb-elem , .fmes-radio-elem , .fmes-text-elem , .fmes-textarea-elem{
+		position : relative;
+		margin : 0px 2px ;
+		display : inline-block;
+		font:12px tahoma,arial,verdana,sans-serif
+		zoom : 1 ; /*fix IE layout bug*/
+		*display : inline;
+	}
+	
+	.fmes-cb , .fmes-radio {
+		border: 0px none;
+		background: none;
+		outline : 0;
+		cursor: pointer;
+		margin : 0px;
+		padding: 0px;
+		width : 13px;
+		height: 13px;
+		vertical-align: middle;
+		background:blue;
+	}
+	.fmes-cb { background : url("images/form/checkbox.gif") no-repeat;	}
+	.fmes-radio { background : url("images/form/radio.gif") no-repeat;	}	
+	
+	.fmes-cb-labelfield , .fmes-radio-labelfield{
+		margin-left:4px;
+	}
+	
+	.fmes-cb::-moz-focus-inner ,
+	.fmes-radio::-moz-focus-inner{border-color:transparent !important;} /*fix inner border */
+	
+	/** checkbox state**/
+	.fmes-cb-elem .fmes-cb ,.fmes-radio-elem .fmes-radio{
+		background-position : -13px 0px;
+	}
+	
+	.fmes-cb-elem .fmes-cb-hover ,
+	.fmes-radio-elem .fmes-radio-hover {
+		background-position : -26px 0px;
+	}
+	
+	.fmes-cb-elem .fmes-cb-pressed,
+	.fmes-radio-elem .fmes-radio-pressed	{
+		background-position : 0px 0px;
+	}
+		
+	.fmes-cb-checked .fmes-cb,
+	.fmes-radio-checked .fmes-radio{
+		background-position : -13px -13px;		
+	}
+	
+	.fmes-cb-checked .fmes-cb-hover,
+	.fmes-radio-checked .fmes-radio-hover{ 
+		background-position : -26px -13px;
+	}
+	
+	.fmes-cb-checked .fmes-cb-pressed,
+	.fmes-radio-checked .fmes-radio-pressed{
+		background-position : -0px -13px;		
+	}
+	
+	/*textfield*/
+	.fmes-text {
+		vertical-align : middle;
+		width : 149px;
+	}
+	
+	.fmes-textarea {
+		vertical-align : top;
+	}
+	
+	.fmes-file {
+		height : 60px;
+		position : absolute;
+		opacity : 0;  /* standard CSS3 style for transparency */
+		filter: alpha(opacity = 0); /* transparency for IE; note no decimal point */
+		top : -4px;
+		right : -2px;
+	}
+	
+	.fmes-file-textfield {
+		width : 200px;
+		height : 14px;
+		line-height : 14px;
+		vertical-align: middle;
+		font-size: 11px;
+	}
+	
+	.fmes-form-file-btn{
+		
+	}
+	
+	/*form panel*/
+	.fmes-form-contentContainer{
+		
+	}

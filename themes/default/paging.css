@@ -1,0 +1,45 @@
+.ipt-paging {
+	padding: 4px;   text-align: left ; font-size : 13px;
+}
+
+.ipt-paging td {
+	vertical-align:middle;
+	text-align:center;	
+}
+	
+.ipt-paging a {
+	text-decoration: none; 
+	border:1px solid white;
+	width : 24px;
+	height : 24px;
+	display : inline-block;
+	background-position : 4px 4px ;
+}
+
+.ipt-paging select{
+	width : 40px;	
+}
+
+.ipt-paging input{
+	width : 40px;
+}
+
+.ipt-paging a:hover {
+	border : 1px solid gray;	
+}
+	
+.ipt-paging a.paging-first{
+	background: url("images/paging_first.gif") no-repeat 4px 4px;
+}
+	
+.ipt-paging a.paging-prev{
+	background : url("images/paging_prev.gif") no-repeat 4px 4px;		
+}
+	
+.ipt-paging a.paging-next{
+	background : url("images/paging_next.gif") no-repeat 4px 4px;		
+}
+	
+.ipt-paging a.paging-last{
+	background : url("images/paging_last.gif") no-repeat 4px 4px;		
+}

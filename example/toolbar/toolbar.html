@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <HEAD>
+  <TITLE> IPT.Class </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+	<!-- 导入包 -->
+   <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+   <script type="text/javascript" src="../../dest/ipt-min.js"></script>
+   <style>
+   	.ipt-toolbar {
+   		padding : 4px;
+   		background : #EEEEEE;
+   	}
+   </style>
+ </HEAD>
+
+ <BODY >
+ <script>
+ var button = new IPT.button.Button({
+	 	text : "BTN3",
+		width : "40px",
+		height : "40px"
+ });
+ var toolbar = new IPT.Toolbar({
+	  items :[{
+		 	text : "BTN1",
+			width : "40px",
+			height : "40px",
+			listeners : {
+				click : function(){
+					alert("this is a button!")
+				}
+			}
+	 },{
+		 	text : "BTN2",
+			width : "40px",
+			height : "40px"
+	 }],
+	  renderTo: document.body
+	});
+ 
+ toolbar.add(button);
+</script>
+ </BODY>
+</HTML>

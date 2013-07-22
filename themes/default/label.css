@@ -1,0 +1,7 @@
+﻿	.fmes-label {
+		font-size : 12px;
+		vertical-align: middle; 
+		display : inline-block;
+		zoom : 1 ; /*fix IE layout bug*/
+		*display : inline;
+	}

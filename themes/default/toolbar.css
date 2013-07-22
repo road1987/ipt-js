@@ -1,0 +1,16 @@
+	.ipt-toolbar {
+		padding : 4px;
+	}
+	
+	.ipt-toolbar-align-left {
+		text-align : left;
+	}
+	
+	.ipt-toolbar-align-center {
+		text-align : center;
+	}
+	
+	.ipt-toolbar-align-right {
+		text-align : right;
+	}
+	

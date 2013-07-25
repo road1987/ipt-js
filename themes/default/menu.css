@@ -1,6 +1,17 @@
 	.ipt-menu { 
-		background : url("images/menu.gif") repeat-y #DDDDDD;
-		border : 1px solid #ECE9D8;
+		background : url("images/menu.gif") repeat-y white;
+		border : 1px solid #99BCE8;
+	    -moz-border-radius: 2px;
+	    -khtml-border-radius: 2px;
+	    -khtml-border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    border-radius: 2px;
+	    
+		padding : 2px;
 		position: absolute;
 		overflow: hidden;
+		color : black;
+		z-index : 10000;
+	    box-shadow : 0 1px 0 0 #ECF2FB inset, 0 -1px 0 0 #ECF2FB inset, -1px 0 0 0 #ECF2FB inset, 1px 0 0 0 #ECF2FB inset;
 	}

@@ -6,6 +6,7 @@
 		font-size:11px;
 		padding: 0px;
 		border: 0px;
+		border-radius : 2px;
 	}
 	
 	.ipt-menuItem a {
@@ -15,7 +16,7 @@
 		outline : 0;
 		cursor: pointer;
 		zoom : 1;
-		padding-left: 4px;
+		padding: 2px;
 		text-decoration : none;
 		color: black;
 		height: 2em;
@@ -50,13 +51,22 @@
 
 
 	.ipt-menuItem-hover { 
-		background: #B6CBE4;
 		border: 0px solid #D1D1D1;
-		1border-radius: 3px;
+		background: #ABC7EC;
+		background-image: -moz-linear-gradient(center top , #DAE7F6,  #ABC7EC );
+		background-image: -webkit-gradient(linear, 50% 0%, 50%  100%, from(#DAE7F6), to(#ABC7EC));
+		background-image: -webkit-linear-gradient( center top, #DAE7F6, #ABC7EC);
+		background-image: -o-linear-gradient(top center , #DAE7F6, #ABC7EC);
+		background-image: linear-gradient(top center , #DAE7F6, #ABC7EC);
 	}
 	
 	.ipt-menuItem-actived {
-		background: #B6CBE4;		
+		background: #ABC7EC;
+	    background-image: -moz-linear-gradient(center top , #DAE7F6,  #ABC7EC );
+		background-image: -webkit-gradient(linear, 50% 0%, 50%  100%, from(#DAE7F6), to(#ABC7EC));
+		background-image: -webkit-linear-gradient( center top, #DAE7F6, #ABC7EC);
+		background-image: -o-linear-gradient(top center , #DAE7F6, #ABC7EC);
+		background-image: linear-gradient(top center , #DAE7F6, #ABC7EC);
 	}
 	
 	.ipt-menuItem-pressed {

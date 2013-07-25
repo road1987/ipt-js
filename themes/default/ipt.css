@@ -1,3 +1,38 @@
+article,aside,dialog,footer,header,section,footer,nav,figure,menu {
+	display: block;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+fieldset,img {
+	border: 0;
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol,ul {
+	list-style: none;
+}
+
+caption,th {
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
 	.fmes-layout-borderlayout{
 		display: block-inline;
 		width : 100%;
@@ -208,10 +243,21 @@
 		*display : inline;
 	}
 	.ipt-menu { 
-		background : url("images/menu.gif") repeat-y #DDDDDD;
-		border : 1px solid #ECE9D8;
+		background : url("images/menu.gif") repeat-y white;
+		border : 1px solid #99BCE8;
+	    -moz-border-radius: 2px;
+	    -khtml-border-radius: 2px;
+	    -khtml-border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    -webkit-border-radius: 2px;
+	    border-radius: 2px;
+	    
+		padding : 2px;
 		position: absolute;
 		overflow: hidden;
+		color : black;
+		z-index : 10000;
+	    box-shadow : 0 1px 0 0 #ECF2FB inset, 0 -1px 0 0 #ECF2FB inset, -1px 0 0 0 #ECF2FB inset, 1px 0 0 0 #ECF2FB inset;
 	}
 	.ipt-menuItem { 
 		vertical-align: middle;
@@ -221,6 +267,8 @@
 		font-size:11px;
 		padding: 0px;
 		border: 0px;
+		border-radius : 2px;
+		z-index : 10000;
 	}
 	
 	.ipt-menuItem a {
@@ -230,7 +278,7 @@
 		outline : 0;
 		cursor: pointer;
 		zoom : 1;
-		padding-left: 4px;
+		padding: 2px;
 		text-decoration : none;
 		color: black;
 		height: 2em;
@@ -265,13 +313,22 @@
 
 
 	.ipt-menuItem-hover { 
-		background: #B6CBE4;
 		border: 0px solid #D1D1D1;
-		1border-radius: 3px;
+		background: #ABC7EC;
+		background-image: -moz-linear-gradient(center top , #DAE7F6,  #ABC7EC );
+		background-image: -webkit-gradient(linear, 50% 0%, 50%  100%, from(#DAE7F6), to(#ABC7EC));
+		background-image: -webkit-linear-gradient( center top, #DAE7F6, #ABC7EC);
+		background-image: -o-linear-gradient(top center , #DAE7F6, #ABC7EC);
+		background-image: linear-gradient(top center , #DAE7F6, #ABC7EC);
 	}
 	
 	.ipt-menuItem-actived {
-		background: #B6CBE4;		
+		background: #ABC7EC;
+	    background-image: -moz-linear-gradient(center top , #DAE7F6,  #ABC7EC );
+		background-image: -webkit-gradient(linear, 50% 0%, 50%  100%, from(#DAE7F6), to(#ABC7EC));
+		background-image: -webkit-linear-gradient( center top, #DAE7F6, #ABC7EC);
+		background-image: -o-linear-gradient(top center , #DAE7F6, #ABC7EC);
+		background-image: linear-gradient(top center , #DAE7F6, #ABC7EC);
 	}
 	
 	.ipt-menuItem-pressed {

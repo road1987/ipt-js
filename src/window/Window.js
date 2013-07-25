@@ -119,7 +119,7 @@ IPT.Class.define('IPT.window.Window' , {
 				 		};
 			 			$(this.mask).css({
 			 				width : docSize.width + "px",
-			 				height : docSize.height + "px",
+			 				height : docSize.height + "px"
 			 			});
 			 		 }
 			 		 return true;

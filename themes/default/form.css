@@ -1,4 +1,4 @@
-	.fmes-cb-elem , .fmes-radio-elem , .fmes-text-elem , .fmes-textarea-elem{
+	.ipt-cb-elem , .ipt-radio-elem , .ipt-text-elem , .ipt-textarea-elem{
 		position : relative;
 		margin : 0px 2px ;
 		display : inline-block;
@@ -7,7 +7,7 @@
 		*display : inline;
 	}
 	
-	.fmes-cb , .fmes-radio {
+	.ipt-cb , .ipt-radio {
 		border: 0px none;
 		background: none;
 		outline : 0;
@@ -19,57 +19,59 @@
 		vertical-align: middle;
 		background:blue;
 	}
-	.fmes-cb { background : url("images/form/checkbox.gif") no-repeat;	}
-	.fmes-radio { background : url("images/form/radio.gif") no-repeat;	}	
+	.ipt-cb { background : url("images/form/checkbox.gif") no-repeat;	}
+	.ipt-radio { background : url("images/form/radio.gif") no-repeat;	}	
 	
-	.fmes-cb-labelfield , .fmes-radio-labelfield{
+	.ipt-cb-labelfield , .ipt-radio-labelfield{
 		margin-left:4px;
 	}
 	
-	.fmes-cb::-moz-focus-inner ,
-	.fmes-radio::-moz-focus-inner{border-color:transparent !important;} /*fix inner border */
+	.ipt-cb::-moz-focus-inner ,
+	.ipt-radio::-moz-focus-inner{border-color:transparent !important;} /*fix inner border */
 	
 	/** checkbox state**/
-	.fmes-cb-elem .fmes-cb ,.fmes-radio-elem .fmes-radio{
+	.ipt-cb-elem .ipt-cb ,.ipt-radio-elem .ipt-radio{
 		background-position : -13px 0px;
 	}
 	
-	.fmes-cb-elem .fmes-cb-hover ,
-	.fmes-radio-elem .fmes-radio-hover {
+	.ipt-cb-elem .ipt-cb-hover ,
+	.ipt-radio-elem .ipt-radio-hover {
 		background-position : -26px 0px;
 	}
 	
-	.fmes-cb-elem .fmes-cb-pressed,
-	.fmes-radio-elem .fmes-radio-pressed	{
+	.ipt-cb-elem .ipt-cb-pressed,
+	.ipt-radio-elem .ipt-radio-pressed	{
 		background-position : 0px 0px;
 	}
 		
-	.fmes-cb-checked .fmes-cb,
-	.fmes-radio-checked .fmes-radio{
+	.ipt-cb-checked .ipt-cb,
+	.ipt-radio-checked .ipt-radio{
 		background-position : -13px -13px;		
 	}
 	
-	.fmes-cb-checked .fmes-cb-hover,
-	.fmes-radio-checked .fmes-radio-hover{ 
+	.ipt-cb-checked .ipt-cb-hover,
+	.ipt-radio-checked .ipt-radio-hover{ 
 		background-position : -26px -13px;
 	}
 	
-	.fmes-cb-checked .fmes-cb-pressed,
-	.fmes-radio-checked .fmes-radio-pressed{
+	.ipt-cb-checked .ipt-cb-pressed,
+	.ipt-radio-checked .ipt-radio-pressed{
 		background-position : -0px -13px;		
 	}
 	
 	/*textfield*/
-	.fmes-text {
+	.ipt-text {
 		vertical-align : middle;
 		width : 149px;
 	}
 	
-	.fmes-textarea {
+	.ipt-textarea {
 		vertical-align : top;
 	}
 	
-	.fmes-file {
+	
+	/*file*/
+	.ipt-file-valuefield {
 		height : 60px;
 		position : absolute;
 		opacity : 0;  /* standard CSS3 style for transparency */
@@ -78,19 +80,10 @@
 		right : -2px;
 	}
 	
-	.fmes-file-textfield {
+	.ipt-file-textfield {
 		width : 200px;
-		height : 14px;
-		line-height : 14px;
 		vertical-align: middle;
-		font-size: 11px;
-	}
-	
-	.fmes-form-file-btn{
-		
-	}
-	
-	/*form panel*/
-	.fmes-form-contentContainer{
-		
+		font-size: 12px;
+		height : 22px;
+		line-height : 22px;
 	}

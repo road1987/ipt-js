@@ -3377,15 +3377,13 @@ IPT.Class.define(' IPT.TabPanel ' , {
 				 add : function(item){//item is a instance of Panel
 
 					if(!item){
-						return false
+						return false;
 					}
 					var tab = this._createTab(item);
 						item.tab = tab;
 					var _this = this;
 					if($.isArray(item)){
-						$.each(item , function(i , item){
-							_this.add(item);
-						});
+						// 
 					}else{
 						item.isShowHeader = false;
 						item.setHeight("100%");
@@ -3843,5 +3841,285 @@ IPT.Class.define(' IPT.MsgBox ' , {
 				win.getBottomToolbar().addClass("ipt-toolbar-align-center");
 				return win;
 		 	}
+		 }
+ });
+IPT.Class.define('IPT.form.Label' , {
+		 extend : 'IPT.Component',
+		 constructor : function(config){
+			IPT.form.Label.callParent(this,config);
+		 },
+		 
+		 methods : {
+			 baseCls : "ipt-label",
+			 forId : "", 
+			 text : "",
+			 
+			 initComponent : function(){
+				IPT.form.Label.superClass.initComponent.call(this);
+				this.setForId(this.forId);
+				this.setText(this.text);
+			 },
+			 
+			 //override addClass
+			 addClass : function(className){
+				var elem = this.getElement();
+				$(elem).addClass(className);
+				return this;
+			 },
+			
+			 setForId : function(id){
+				var elem = this.getElement();
+					$(elem).attr('for' , id);
+					this.forId = id;
+				return this;
+			 },
+				
+			 getForId : function(){
+				return this.forId;
+			 },
+				
+			 getText : function(){
+				return this.text;
+			 },
+				
+			 setText : function(text){
+				var elem = this.getElement();
+				$(elem).html(text);
+				this.text = text;
+				return this;
+			 },
+			 
+			 tpl : function(){
+					return '<label class="<%=baseCls%>"></label>';
+			 }
+		 },
+
+		 statics : {
+			 XTYPE : 'label'
+		 }
+ });
+IPT.Class.define('IPT.form.Field' , {
+		 extend : 'IPT.Component',
+		 constructor : function(config){
+			IPT.form.Field.callParent(this , config);
+		},
+		 
+		methods : {	
+			name : "",
+			value : "",
+
+			initComponent : function(config){
+				IPT.form.Field.superClass.initComponent.call(this ,config);
+				this.setInitValue(this.value);
+			},
+			
+			setName : function(name){
+				this.name = name;
+			},
+			
+			getName : function(){
+				return this.name;
+			},
+			
+			setValue : function(value){
+				var elem = this._getTextField();
+				$(elem).val(value);
+				this.value = value;
+				return this;
+			},
+			
+			getValue : function(value){
+				return this.value;
+			},
+			
+			setInitValue : function(value){
+				this.initValue = value;
+				return this;
+			},
+			
+			getInitValue : function(){
+				return this.initValue;
+			},
+			
+			reset : function(){
+				this.setValue(this.getInitValue());
+			},
+
+			//override
+			_getTextField : function(){
+				return this.element.textField;
+			},
+			
+	 		_getFocusElement : function(){
+	 			return this.element.textField;
+	 		}
+		}
+ });
+IPT.Class.define('IPT.form.File' , {
+		 extend : 'IPT.form.Field',
+		 constructor : function(config){
+			IPT.form.File.callParent(this, config);
+		 },
+		 
+		 methods : {	
+			baseCls :"ipt-file",
+			
+			hoverCls : "ipt-btn-hover",
+			pressedCls : "ipt-btn-pressed",
+			focusCls : "ipt-btn-hover",
+	 		
+			
+			//override
+			initComponent : function(){
+				IPT.form.File.superClass.initComponent.call(this);
+				this._initEvent();	
+			},
+			
+			
+	 		getValue : function(){
+	 			return $(this._getValueField()).val();
+	 		},
+	 		
+	 		setValue : function(){
+	 			var value =  $(this._getValueField()).val();;
+	 			
+	 			$(this._getTextField()).val(value);
+	 			return this;
+	 		},
+	 		
+			//private
+			_onMouseOver : function(){
+				$(this.element.btnElem).addClass(this.hoverCls);
+				return this;
+			},
+			
+			_onMouseOut : function(){
+				$(this.element.btnElem).removeClass(this.hoverCls);
+				$(this.element.btnElem).removeClass(this.pressedCls);
+				return this;
+			},
+
+			_onMouseDown : function(){
+				$(this.element.btnElem).addClass(this.pressedCls);
+				return this;
+			},
+
+			_onMouseUp : function(){
+				$(this.element.btnElem).removeClass(this.pressedCls);
+				return this;
+			},
+
+			_onFocus : function(){
+				$(this.element.btnElem).addClass(this.focusCls);
+				return this;
+			},
+
+			_onBlur : function(){
+				$(this.element.btnElem).removeClass(this.focusCls);
+				$(this.element.btnElem).removeClass(this.pressedCls);
+				return this;
+			},
+
+			_initEvent : function(){
+				var _this = this , 
+					valueField = this._getValueField() ,
+					EventObject = IPT.events.EventObject;
+						
+				$(valueField).bind('mouseover' , function(){
+					_this._onMouseOver.call(_this);
+					_this.fireEvent(EventObject.MOUSE_OVER);
+					return false;
+				});
+
+				$(valueField).bind('mouseout' , function(){
+					_this._onMouseOut.call(_this);
+					_this.fireEvent(EventObject.MOUSE_OUT);
+					return false;
+				});
+
+				$(valueField).bind('click' , function(){
+					_this.fireEvent(EventObject.CLICK);
+				});
+
+				$(valueField).bind('dblclick' , function(){
+					_this.fireEvent(EventObject.DOUBLE_CLICK);
+				});
+
+				$(valueField).bind('mousedown' , function(){
+					_this._onMouseDown.call(_this);
+				});
+
+				$(valueField).bind('mouseup' , function(){
+					_this._onMouseUp.call(_this);
+				});
+
+				$(valueField).bind('focus' , function(){
+					_this._onFocus.call(_this);
+				});
+
+				$(valueField).bind('blur' , function(){
+					_this._onBlur.call(_this);
+				});
+				
+				$(valueField).bind('change', function(){
+					_this.setValue();
+				});
+			},
+			
+			
+			_getTextField : function(){
+				return $(this.getElement()).find(".ipt-file-textfield").get(0);
+			},
+			
+			_getValueField : function(){
+				return $(this.getElement()).find(".ipt-file-valuefield").get(0);				
+			},
+			
+			
+			tpl : function(){
+				return ['<div class="<%=baseCls%>">',
+				        	'<input type="text" readonly="" class="ipt-file-textfield"/>',
+				              '<div class="ipt-btn ipt-btn-default">',
+					              '<span class="ipt-btn-arrow ipt-btn-arrow-bottom">',
+											'<button autocomplete="off" role="button" hidefocus="true" type="button">' ,
+												'<span class="ipt-btn-text">choose...</span>' ,
+												'<span class="ipt-btn-icon">&nbsp;</span>' ,
+											'</button>',
+								            '<input type="file" hidefocus="true" class="ipt-file-valuefield"/>',
+								  '</span>',				        	
+							  '</div>',
+				        '<div>'].join('');
+			}
+		 },
+		 
+		 statics : {
+			 "XTYPE" : "file",
+			 
+			 createUI : function(){
+				var element = document.createElement('div'),
+					fmesEle = IPT.$(element);
+				fmesEle.addClass('IPT-file-elem');
+				
+				fmesEle.html([
+				              '<input type="text" readonly="" class="IPT-file-textfield"/>',
+				              '<div class="IPT-btn IPT-btn-default">',
+					              '<span class="IPT-btn-arrow IPT-btn-arrow-bottom">',
+											'<button autocomplete="off" role="button" hidefocus="true" type="button">' ,
+												'<span class="IPT-btn-text">choose...</span>' ,
+												'<span class="IPT-btn-icon">&nbsp;</span>' ,
+											'</button>',
+								            '<input type="file" hidefocus="true" class="IPT-file"/>',
+								  '</span>',
+							  '</div>'].join(''));
+
+				element.button = fmesEle.find('input.IPT-file').get()[0];
+				element.btnElem = fmesEle.find('div.IPT-btn').get()[0];
+				element.textField = fmesEle.find('input.IPT-file-textfield').get()[0];
+				element.btn = {
+						textField : fmesEle.find('.IPT-btn-text').get()[0],
+						iconField : fmesEle.find('.IPT-btn-icon').get()[0]	
+				}
+				return element;
+			 }
 		 }
  });

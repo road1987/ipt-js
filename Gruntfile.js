@@ -32,7 +32,11 @@ module.exports = function(grunt) {
                       'src/TabPanel.js',
                       'src/window/WindowMgr.js',
                       'src/window/Window.js',
-                      'src/MsgBox.js'
+                      'src/MsgBox.js',
+                      
+                      'src/form/Label.js',
+                      'src/form/Field.js',
+                      'src/form/File.js'
                 ],
                 dest: 'dest/ipt.js'
             },

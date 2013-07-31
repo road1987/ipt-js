@@ -58,6 +58,8 @@
 	
 	var dTarget0 = new IPT.dnd.DropTarget($("#windowX").get(0));
 	var dTarget = new IPT.dnd.DropTarget($("#windowY").get(0));
+	
+	
 	dTarget.addListener(IptEvent.DRAG_ENTER , function(e){
 		console.log("enter windowY");
 	});
@@ -71,6 +73,10 @@
 	dTarget.addListener(IptEvent.DROP , function(e,source){
 		$(this.getTarget()).append(source);
 	});
+	
+	dTarget0.addListener(IptEvent.DROP, function(e,source){
+		$(this.getTarget()).append(source);
+	})
  </script>
  </body>
  

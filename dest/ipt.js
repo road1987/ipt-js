@@ -3384,7 +3384,7 @@ IPT.Class.define(' IPT.TabPanel ' , {
 					var _this = this;
 					if($.isArray(item)){
 						$.each(item , function(i , item){
-							
+							_this.add(item);
 						});
 					}else{
 						item.isShowHeader = false;

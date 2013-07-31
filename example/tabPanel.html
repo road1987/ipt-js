@@ -39,7 +39,7 @@
  <BODY >
   <div >
  	<ul id="test1">
- 	<li>this is a test!</li>
+ 	<li>this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!this is a test!</li>
  	<li>this is a test!</li>
  	<li>this is a test!</li>
  	<li>this is a test!</li>
@@ -106,6 +106,30 @@
 		}));
 	});	
 	
+	
+	
+	var tab2 = new IPT.TabPanel({
+		renderTo : document.body,
+		title : "panelxx",
+		width : "600px",
+		height : '200px'
+	});
+	tab2.addClass("margin");
+	tab2.add(
+	    new IPT.Panel({
+			title : "panel1",
+			closable : true,
+			html : $("#test1")
+		})
+	);
+	
+	tab2.add(
+		    new IPT.Panel({
+				title : "www.baidu.com",
+				closable : true,
+				html : $("#test1")
+			})
+		);
  </script>
  </body>
  

@@ -37,15 +37,13 @@ IPT.Class.define(' IPT.TabPanel ' , {
 				 add : function(item){//item is a instance of Panel
 
 					if(!item){
-						return false
+						return false;
 					}
 					var tab = this._createTab(item);
 						item.tab = tab;
 					var _this = this;
 					if($.isArray(item)){
-						$.each(item , function(i , item){
-							
-						});
+						// 
 					}else{
 						item.isShowHeader = false;
 						item.setHeight("100%");

@@ -33,6 +33,7 @@ IPT.Class.define('IPT.form.Field' , {
 			},
 			
 			setInitValue : function(value){
+				this.setValue(value);
 				this.initValue = value;
 				return this;
 			},
@@ -47,11 +48,11 @@ IPT.Class.define('IPT.form.Field' , {
 
 			//override
 			_getTextField : function(){
-				return this.element.textField;
+				return this.getElement();
 			},
 			
 	 		_getFocusElement : function(){
-	 			return this.element.textField;
+				return this.getElement();
 	 		}
 		}
  });

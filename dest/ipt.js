@@ -3933,6 +3933,7 @@ IPT.Class.define('IPT.form.Field' , {
 			},
 			
 			setInitValue : function(value){
+				this.setValue(value);
 				this.initValue = value;
 				return this;
 			},
@@ -3947,11 +3948,11 @@ IPT.Class.define('IPT.form.Field' , {
 
 			//override
 			_getTextField : function(){
-				return this.element.textField;
+				return this.getElement();
 			},
 			
 	 		_getFocusElement : function(){
-	 			return this.element.textField;
+				return this.getElement();
 	 		}
 		}
  });
@@ -4093,33 +4094,112 @@ IPT.Class.define('IPT.form.File' , {
 		 },
 		 
 		 statics : {
-			 "XTYPE" : "file",
+			 "XTYPE" : "file"
+		 }
+ });
+IPT.Class.define('IPT.form.TextField' , {
+		 extend : 'IPT.form.Field',
+		 constructor : function(config){
+			IPT.form.TextField.callParent(this, config);
+		},
+		 
+		 methods : {	
+			baseCls : "ipt-textfield",
+			hoverCls : "ipt-textfield-hover",
+			pressedCls : "ipt-textfield-pressed",
+			focusCls : "ipt-textfield-hover",
+			checkedCls : "ipt-textfield-checked", 
 			 
-			 createUI : function(){
-				var element = document.createElement('div'),
-					fmesEle = IPT.$(element);
-				fmesEle.addClass('IPT-file-elem');
+			type : "text",
+			placeholder : "",
+			
+			
+			//override
+			initComponent : function(){
+				IPT.form.TextField.superClass.initComponent.call(this);
+				this._initEvent();	
+			},
+			
+			setType : function(type){
+ 				var textField = this._getTextField();
+ 				
+ 				//$(textField).attr("type" , type);
+ 				textField.type = type;
+				this.type = type;
+				return this;
+			},
+			
+			getType : function(){
+				return this.type;
+			},
+			
+			setPlaceHolder : function(text){
+	 			var textField = this._getTextField();
+	 				$(textField).attr("placeholder" , text);
 				
-				fmesEle.html([
-				              '<input type="text" readonly="" class="IPT-file-textfield"/>',
-				              '<div class="IPT-btn IPT-btn-default">',
-					              '<span class="IPT-btn-arrow IPT-btn-arrow-bottom">',
-											'<button autocomplete="off" role="button" hidefocus="true" type="button">' ,
-												'<span class="IPT-btn-text">choose...</span>' ,
-												'<span class="IPT-btn-icon">&nbsp;</span>' ,
-											'</button>',
-								            '<input type="file" hidefocus="true" class="IPT-file"/>',
-								  '</span>',
-							  '</div>'].join(''));
+	 				this.placeholder = text;
+				return this;
+			},
+			
+			getPlaceHolder : function(){
+				return this.placeholder;
+			},
+			
+			//private
+			_onFocus : function(){
+				var elem = this._getTextField();
+				
+				$(elem).addClass(this.focusCls);
+				return this;
+			},
 
-				element.button = fmesEle.find('input.IPT-file').get()[0];
-				element.btnElem = fmesEle.find('div.IPT-btn').get()[0];
-				element.textField = fmesEle.find('input.IPT-file-textfield').get()[0];
-				element.btn = {
-						textField : fmesEle.find('.IPT-btn-text').get()[0],
-						iconField : fmesEle.find('.IPT-btn-icon').get()[0]	
-				}
-				return element;
-			 }
+			_onBlur : function(){
+				var elem = this._getTextField();
+
+				$(elem).removeClass(this.focusCls);
+				$(elem).removeClass(this.pressedCls);
+				return this;
+			},
+
+			_initEvent : function(){
+				var elem = $(this.getElement()),
+					textField = $(this._getTextField()),
+					EventObject = IPT.events.EventObject,
+			        _this = this;
+				
+				elem.bind("mousedown" , function(){
+					_this.fireEvent(EventObject.CLICK);
+				});
+				
+				elem.bind("click" , function(){
+					_this.fireEvent(EventObject.CLICK);
+				});					
+			
+				textField.bind("click" , function(event){
+					_this.fireEvent(EventObject.CLICK);
+				});
+				
+				textField.bind("focus" , function(){
+					_this._onFocus();
+					_this.fireEvent(EventObject.FOCUS);
+				});
+				
+				textField.bind("blur" , function(){
+					_this._onBlur();
+					_this.fireEvent(EventObject.BLUR);
+				});	
+			},
+			
+	 		_getSizeElement : function(){
+	 			return this.getElement();
+	 		},
+	 		
+	 		tpl : function(){
+	 			return ['<input type="<%=type%>" class="<%=baseCls%>"/>'].join("");
+	 		}
+		 },
+		 
+		 statics : {
+			 "XTYPE" : "textfield"
 		 }
  });

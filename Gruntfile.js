@@ -36,7 +36,8 @@ module.exports = function(grunt) {
                       
                       'src/form/Label.js',
                       'src/form/Field.js',
-                      'src/form/File.js'
+                      'src/form/File.js',
+                      'src/form/TextField.js'
                 ],
                 dest: 'dest/ipt.js'
             },

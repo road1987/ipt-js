@@ -1,0 +1,42 @@
+<html>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+	<!-- 导入皮肤 -->
+    <link rel="stylesheet" type="text/css" href="../../themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="../../themes/default/ipt-min.css" />
+   <!-- 导入包 -->
+    <script type="text/javascript" src="../jquery-1.8.2.js"></script>	
+    <script type="text/javascript" src="../../dest/ipt.js"></script>
+ <style>
+
+ </style>
+ </HEAD>
+
+ <BODY>
+ <script>
+
+	var nameF = new IPT.form.TextField();
+	var pwdF = new IPT.form.TextField({type:"password" , value:"123456123"})
+		nameF.render(document.body);
+		nameF.setValue();
+		nameF.setPlaceHolder("请输入用户名");
+		nameF.addClass("d");
+
+		pwdF.render(document.body);
+		pwdF.setPlaceHolder("请输入密码");		
+		pwdF.addClass("d");
+
+
+	var reset = new IPT.button.Button("reset");
+		reset.render(document.body);
+		reset.addListener("click" , function(){
+			pwdF.reset();
+		});
+ </script>
+ </BODY>
+</HTML>

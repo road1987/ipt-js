@@ -37,6 +37,8 @@ IPT.Class.define(' IPT.events.EventObject ' , {
   				
   			//form event
   			CHECK : "check",
+  			UNCHECK : "uncheck",
+  			CHANGE : "change",
   			
   			//DnD
 			DRAG_START : "dragstart", 

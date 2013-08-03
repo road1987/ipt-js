@@ -22,10 +22,6 @@
 	.ipt-cb { background : url("images/form/checkbox.gif") no-repeat;	}
 	.ipt-radio { background : url("images/form/radio.gif") no-repeat;	}	
 	
-	.ipt-cb-labelfield , .ipt-radio-labelfield{
-		margin-left:4px;
-	}
-	
 	.ipt-cb::-moz-focus-inner ,
 	.ipt-radio::-moz-focus-inner{border-color:transparent !important;} /*fix inner border */
 	

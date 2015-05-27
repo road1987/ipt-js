@@ -1,4 +1,4 @@
 ipt-js
 ======
 
-javascript ui frame.
+javascript ui framework.
